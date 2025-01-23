@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -43,9 +43,9 @@ function Home() {
                   Tempore repellat explicabo enim soluta temporibus asperiores
                   aut obcaecati perferendis porro nobis.
                 </p>
-                <button className="block bg-[#057aff] px-4 py-3 text-[#dbe1ff] rounded-lg  ">
+                <Link to="/products" className="block bg-[#057aff] px-4 py-3 text-[#dbe1ff] rounded-lg  ">
                   OUR PRODUCTS
-                </button>
+                </Link>
               </div>
               <div className="corusel-wrapper max-w-[496px] overflow-x-scroll flex items-center gap-3 bg-gray-800 p-3 rounded-xl">
                 <div className="flex-shrink-0">
