@@ -43,7 +43,10 @@ function Home() {
                   Tempore repellat explicabo enim soluta temporibus asperiores
                   aut obcaecati perferendis porro nobis.
                 </p>
-                <Link to="/products" className="block bg-[#057aff] px-4 py-3 text-[#dbe1ff] rounded-lg  ">
+                <Link
+                  to="/products"
+                  className="block bg-[#057aff] px-4 py-3 text-[#dbe1ff] rounded-lg   w-fit"
+                >
                   OUR PRODUCTS
                 </Link>
               </div>
