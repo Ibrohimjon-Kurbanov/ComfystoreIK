@@ -120,7 +120,7 @@ function ProductsDetails() {
               >
                 Add to bag
               </button>
-              <ToastContainer></ToastContainer>
+              {product.length > 0 && <ToastContainer></ToastContainer>}
             </div>
           </div>
         )}
