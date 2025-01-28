@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { useDispatch } from "react-redux";
+import { add } from "../store/cardSlice";
 function ProductsDetails() {
   const [product, setProduct] = useState([]);
   const [selectedColor, setSelectedColor] = useState("");
+  const [count, setCount] = useState("");
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   const notify = () => {
     toast.success("Item added to bag", {
@@ -35,6 +38,16 @@ function ProductsDetails() {
         console.log(err);
       });
   }, []);
+  function handleAddToBag() {
+    const obj = {
+      id,
+      count: Number(count),
+      color: selectedColor,
+      product,
+    };
+    dispatch(add(obj));
+    notify();
+  }
   return (
     <div className="py-20">
       <div className="container">
@@ -100,6 +113,10 @@ function ProductsDetails() {
                 <h4 className="py-2 px-1 text-[#394a6e] text-md ">Amount</h4>
               </label>
               <select
+                value={count}
+                onChange={(e) => {
+                  setCount(e.target.value);
+                }}
                 id="amount"
                 className="select select-primary w-full max-w-xs"
               >
@@ -115,7 +132,7 @@ function ProductsDetails() {
                 <option value="10">10</option>
               </select>
               <button
-                onClick={notify}
+                onClick={handleAddToBag}
                 className="bg-[#463aa1] px-4 py-3.5 uppercase text-sm text-[#dbd4ed] rounded-md block mt-10"
               >
                 Add to bag

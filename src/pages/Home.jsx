@@ -65,7 +65,7 @@ function Home() {
                     alt=""
                   />
                 </div>
-                w
+
                 <div className="flex-shrink-0">
                   <img
                     className="w-[320px] h-[416px] object-cover rounded-xl"

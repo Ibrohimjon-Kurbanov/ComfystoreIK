@@ -12,7 +12,6 @@ function Products() {
   const [price, setPrice] = useState(100000);
   const [shipping, setShipping] = useState(false);
   const [loading, setLoading] = useState(false);
-
   function getData(url) {
     setLoading(true);
     axios
@@ -20,7 +19,6 @@ function Products() {
       .then((response) => {
         if (response.status == 200) {
           setProducts(response.data.data);
-          console.log(response.data.data);
         }
       })
       .catch((err) => {
